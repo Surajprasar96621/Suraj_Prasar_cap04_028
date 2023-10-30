@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Document</title>
+</head>
+<body>
+  <button>Show Quote in console</button>
+  <p id="quote">Talk is cheap Show me the code</p>
+
+  <script>
+    
+    const button = document.querySelector("button");
+
+    
+    const quote = document.querySelector("#quote");
+
+    
+    button.addEventListener("click", function() {
+      const quoteText = quote.textContent;
+      console.log(quoteText);
+    });
+  </script>
+</body>
+</html>

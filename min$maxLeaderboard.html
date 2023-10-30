@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>MIN & MAX LEADERBOARD</title>
+    <style>
+        .container {
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>MIN & MAX LEADERBOARD</h1>
+        <div>
+            <input type="text" id="scoreBox" placeholder="Enter a score">
+        </div>
+        <div>
+            <button onclick="addToScore()">Enter</button>
+        </div>
+        <div>
+            <h2>MIN</h2>
+            <p id="minScore">999</p>
+        </div>
+        <div>
+            <h2>MAX</h2>
+            <p id="maxScore">0</p>
+        </div>
+    </div>
+
+    <script>
+        let currentScore = "";
+        let minScore = 999;
+        let maxScore = 0;
+
+        function addToScore() {
+            const scoreBox = document.getElementById("scoreBox");
+            const score = scoreBox.value;
+            currentScore += score;
+            scoreBox.value = "";
+
+            const minScoreDisplay = document.getElementById("minScore");
+            const maxScoreDisplay = document.getElementById("maxScore");
+
+            if (parseInt(score) < minScore) {
+                minScore = parseInt(score);
+                minScoreDisplay.innerText = minScore;
+            }
+
+            if (parseInt(score) > maxScore) {
+                maxScore = parseInt(score);
+                maxScoreDisplay.innerText = maxScore;
+            }
+        }
+    </script>
+</body>
+</html>
